@@ -8,16 +8,16 @@ var score = 0
 function setTime() {
   var timerInterval = setInterval(function() {
     secondsLeft--;
-    timeEL.textContent = secondsLeft;
+    timeEL.textContent = secondsLeft + "";
 
     if(secondsLeft === 0) {
       
       clearInterval(timerInterval);
-    
-      sendMessage();
+      // endQuiz();
     }
 
-  }, 1000); }
+  }, 1000); 
+}
 
 
 var questions = [
@@ -61,20 +61,24 @@ Answer:"Choice3"
 
 // if last question then go to initial page after answer selection
 
-// if timer reacges zero go to initial page
+// if timer reaches zero go to initial page
 
 
 
 // after game is over 
 
 
-function beginQuiz() {
+function startQuiz() {
  
-  var secondsLeft = 60;
-  pullQuestions();
+  // document.querySelector(#Quizcontainer).innerhtml
+  // pullQuestions();
   setTime();
   
 }
+
+
+
+
 
 
 
