@@ -1,7 +1,7 @@
 var timeEL = document.querySelector(".timer");
-var startQuestion= -1
+var startQuestion
 var secondsLeft = 60;
-var score = 0
+var score = ""
 
 
 
@@ -45,11 +45,12 @@ Answer:"Choice3"
   }
   ];
 
+// Now I need a for loop to run through this array and display the questions on the HTMl
+
+// On click of an answer I need the question to cycle to the next question immmediatly whether right or wrong
 
 
 
-
-// Accesing questions and answers, then cycling through them with the if/else statement
 
 // if/else statement for answer selection (correct answers to the questions will have a true value assigned, while false for the wrong answer.)
 
@@ -78,6 +79,14 @@ function startQuiz() {
 
 
 
+function saveScore()
+
+// Need a get item to save input of initials and score. Will be linked to a button
+
+
+function displayScore()
+
+// Need set item for any potentially locally stored Highscores, these would load when user navigates to Highscore page
 
 
 
