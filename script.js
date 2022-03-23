@@ -4,7 +4,8 @@ var startQuestion
 var secondsLeft = 60;
 var score = ""
 var currentQuestionIndex = 0;
-
+var submitBtn = document.querySelector("#submit");
+var showInitials=document.querySelector("#superIn")
 
 
 
@@ -13,13 +14,25 @@ function setTime() {
     secondsLeft--;
     timeEL.textContent = "Timer:" + secondsLeft;
 
-    if(secondsLeft === 0) {
+    if(secondsLeft === 0  | currentQuestionIndex === questions.length) {
       
       clearInterval(timerInterval);
       endQuiz();
     }
 
-  }, 1000); 
+  }, 1000); }
+
+
+function renderLastRegistered() {
+  localStorage.getItem("myText", myText);
+
+  if (!myText ) {
+    return;
+  }
+
+  else {showsuperIn.textContent = myText;
+  }
+
 }
 
 // questions variable to loop through
@@ -75,7 +88,6 @@ function showQuestions(){
 function answerClick(){
   if (this.value !== questions[currentQuestionIndex].Answer) {
     secondsLeft -= 10;
-    
   }
 
   currentQuestionIndex++;
@@ -123,6 +135,102 @@ function highScorepage(){
   document.querySelector(".highScoreScreen").classList.add("hide");
 
   document.querySelector(".viewhighScores ").classList.remove("hide");
+
+  document.querySelector(".timer").classList.add("hide");
+
+  renderLastRegistered();
+
+  
+  
 }
+
+function myFunction() {
+  var x = document.getElementById("myText").value;
+  document.getElementById("demo").innerHTML = x;
+
+  document.querySelector(".highScoreScreen").classList.add("hide");
+
+  document.querySelector(".viewhighScores ").classList.remove("hide");
+
+  var input = document.getElementById(".inputBtn");
+localStorage.setItem("", input.val());
+console.log(input);
+renderLastRegistered();
+}
+
+
+function replay(){
+  
+
+
+ 
+    document.querySelector("#startScreen").classList.remove("hide");
+  
+    document.querySelector(".viewhighScores").classList.add("hide");
+  
+    
+    setTime();
+    showQuestions();
+     return;
+
+
+    //  reset timer
+    // reset questions
+
+
+  function clearScores(){
+
+  }
+
+}
+
+
+// var mTxt = document.querySelector("#myText");
+
+// mTxt.textContent = storageText;
+
+
+// var storageText =localStorage.getItem("storageText");
+
+// addButton.addEventListener("click", function() {
+
+//     localStorage.setItem("storageText", storageText);
+// })
+
+
+
+
+// add wrong or correct text to answer selection
+
+// turn timer off when highscore page is clicked 
+
+
+//  button to replay quiz
+
+// capture time as score 
+
+// button to save highscore to local storage( initials and time)
+
+// When highscore page is loaded display whatever recorded Scores and initals are saved to local storage
+
+// style everything
+
+
+submitBtn.addEventListener("click", function(event) {
+  // event.preventDefault();
+
+  var myText = document.querySelector("#myText").value;
+
+  if (myText === "") {
+    displayMessage("Enter something, anything.");
+  } else  {
+
+  localStorage.setItem("myText", myText);
+  // localStorage.setItem("password", password);
+  renderLastRegistered(); 
+}
+});
+
+
 
 
