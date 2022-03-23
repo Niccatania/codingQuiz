@@ -10,19 +10,33 @@
   <body>
 
     <a onclick="RetrieveHScore()"><h1 class="HighScoreLink" style="text-align:left;">HighScores</h1></a>
-    <h2 class="timer" style="text-align:right;">Timer:</h2>
+    <h1 class="timer" style="text-align:right;" > Timer:</h1>
     
 
 
     
-      <div id=QuizContainer>
+      <div id=startScreen>
+
         <h2>"Worlds best coding quiz"</h2>
         <h3>"It's quite possible this is the best coding quiz ever. Wrong answer subtracts 10 seconds from the timer. The goal is to have as many seconds left as possible by completion."</h3>
-<button id="startBtn" onclick="beginQuiz()">"Start Quiz"</button>
+<button id="startBtn" onclick="startQuiz()">"Start Quiz"</button>
       </div>
+      <div class="questionScreen hide">
+        <h2 id="questionTitle"></h2>
+        <div id="choices"></div>
+      </div>
+      
+      <div class="highScoreScreen hide" >
+          <h2></h2>
+          <div></div>
+        </div>
+    </div>
 
 
+  
 
+
+ 
 
     <script src="./script.js"></script>
   </body>
