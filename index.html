@@ -27,13 +27,27 @@
       </div>
       
       <div class="highScoreScreen hide" >
-          <h2> Booyah </h2>
+          <h2> The quiz is over.</h2>
+          <p>Your score is " "</p>
+          <input type="text" id="myText" value="">
+
+<button id= "submit" class= "inputBtn" onclick="myFunction()">Submit score</button>
+
+
+
+<p id="demo"></p>
+
+
           <div></div>
         </div>
     </div>
 
     <div class="viewhighScores hide" >
       <h2> This is where the highscores would go. </h2>
+      <p id="superIn"> Initials</p>
+      <button onclick="replay()">Replay!</button>
+      <button onclick="clearScores()")>Clear scores.</button>
+
       <div></div>
     </div>
 </div>
@@ -48,4 +62,5 @@
     <script src="./script.js"></script>
   </body>
 </html>
+
 
