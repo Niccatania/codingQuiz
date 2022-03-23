@@ -11,12 +11,12 @@ var currentQuestionIndex = 0;
 function setTime() {
   var timerInterval = setInterval(function() {
     secondsLeft--;
-    timeEL.textContent = secondsLeft + "";
+    timeEL.textContent = "Timer:" + secondsLeft;
 
     if(secondsLeft === 0) {
       
       clearInterval(timerInterval);
-      // endQuiz();
+      endQuiz();
     }
 
   }, 1000); 
@@ -75,44 +75,19 @@ function showQuestions(){
 function answerClick(){
   if (this.value !== questions[currentQuestionIndex].Answer) {
     secondsLeft -= 10;
+    
   }
 
   currentQuestionIndex++;
 
   if (currentQuestionIndex === questions.length) {
     
+    endQuiz();
+    
   } else {
     showQuestions();
   }
 }
-
-
-
-
-
-
-
-// On click of an answer I need the question to cycle to the next question immmediatly whether right or wrong
-
-
-
-
-// if/else statement for answer selection (correct answers to the questions will have a true value assigned, while false for the wrong answer.)
-
-// if (true){ text-Correct!, Go to next question}
-
-// else {timer--, text-Wrong!, Go to next question}
-
-
-
-// if last question then go to initial page after answer selection
-
-// if timer reaches zero go to initial page
-
-
-
-// after game is over 
-
 
 function startQuiz() {
 
@@ -129,12 +104,25 @@ function startQuiz() {
 }
 
 
+function endQuiz(){
 
-// function saveScore()
+  document.querySelector(".questionScreen").classList.add("hide");
 
-// Need a get item to save input of initials and score. Will be linked to a button
+  document.querySelector(".highScoreScreen").classList.remove("hide");
+}
+
+function highScorepage(){
 
 
-// function displayScore()
 
-// Need set item for any potentially locally stored Highscores, these would load when user navigates to Highscore page
+  document.querySelector("#startScreen").classList.add("hide");
+
+  
+  document.querySelector(".questionScreen").classList.add("hide");
+
+  document.querySelector(".highScoreScreen").classList.add("hide");
+
+  document.querySelector(".viewhighScores ").classList.remove("hide");
+}
+
+
