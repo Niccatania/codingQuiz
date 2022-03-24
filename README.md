@@ -1,5 +1,5 @@
 # codingQuiz
-A timed coding quiz
+A timed coding quiz based on javascript. 
 # Goal
 The goal of this project is to create a timed coding quiz. The quiz is multiple choice, and each answer selection an event happens.
 
