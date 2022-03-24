@@ -40,26 +40,26 @@ function renderLastRegistered() {
 
 var questions = [
   {
-questionTitle:"Q1",
-Choices:["Choice1" , "Choice2","Choice3","Choice4"],
-Answer:"Choice1"
+questionTitle:"How can I create a comment in a Javascript file?",
+Choices:["//Comment" , "'Comment'","</Comment","!!Comment"],
+Answer:"//Comment"
 }, 
 {
-questionTitle:"Q2",
-Choices:["Choice1" , "Choice2","Choice3","Choice4"],
-Answer:"Choice1"},
+questionTitle:"Which Javascript popup box lets you select between 'Cancel' or 'Ok' ",
+Choices:["Alert box" , "Prompt box","Confirm box","Two choice box"],
+Answer:"Confirm box"},
 {
   
   
-questionTitle:"Q3",
-Choices:["Choice1" , "Choice2","Choice3","Choice4"],
-Answer:"Choice3"
+questionTitle:"Which type of storage will keep data saved over page refresh?",
+Choices:["Storage unit" , "Refresh storage","Local storage","Global storage"],
+Answer:"Local storage"
 },
 
 {
-  questionTitle:"Q4",
-  Choices:["Choice1" , "Choice2","Choice3","Choice4"],
-  Answer:"Choice3"
+  questionTitle:"Which option would call the function 'intheFunction",
+  Choices:["call.intheFunction;" , "intheFunction{};","intheFunction();'",".intheFunction;"],
+  Answer:"intheFunction();"
   }
   ];
 
@@ -162,9 +162,6 @@ renderLastRegistered();
 
 function replay(){
   
-
-
- 
     document.querySelector("#startScreen").classList.remove("hide");
   
     document.querySelector(".viewhighScores").classList.add("hide");
@@ -184,6 +181,8 @@ function replay(){
   }
 
 }
+
+
 submitBtn.addEventListener("click", function(event) {
   // event.preventDefault();
 
@@ -198,6 +197,7 @@ submitBtn.addEventListener("click", function(event) {
   renderLastRegistered(); 
 }
 });
+
 
 
 
