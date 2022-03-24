@@ -20,5 +20,23 @@
                text-align: center;
            }
 
+
+           .questionScreen{
+            text-align: center;
+        }
+
+        .highScoreScreen{
+            text-align: center;
+        }
+
+        .viewhighScores{
+            text-align: center;
+
+        }
+
+
+
            h1{text-align: end;}
            h3{text-align: start;}
+
+          
