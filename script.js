@@ -24,13 +24,14 @@ function setTime() {
 
 
 function renderLastRegistered() {
+  var myText = document.querySelector("#myText").value;
   localStorage.getItem("myText", myText);
 
   if (!myText ) {
     return;
   }
 
-  else {showsuperIn.textContent = myText;
+  else {superIn.textContent = myText;
   }
 
 }
@@ -183,39 +184,6 @@ function replay(){
   }
 
 }
-
-
-// var mTxt = document.querySelector("#myText");
-
-// mTxt.textContent = storageText;
-
-
-// var storageText =localStorage.getItem("storageText");
-
-// addButton.addEventListener("click", function() {
-
-//     localStorage.setItem("storageText", storageText);
-// })
-
-
-
-
-// add wrong or correct text to answer selection
-
-// turn timer off when highscore page is clicked 
-
-
-//  button to replay quiz
-
-// capture time as score 
-
-// button to save highscore to local storage( initials and time)
-
-// When highscore page is loaded display whatever recorded Scores and initals are saved to local storage
-
-// style everything
-
-
 submitBtn.addEventListener("click", function(event) {
   // event.preventDefault();
 
@@ -230,7 +198,6 @@ submitBtn.addEventListener("click", function(event) {
   renderLastRegistered(); 
 }
 });
-
 
 
 
