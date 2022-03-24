@@ -4,4 +4,21 @@
             display: none;
         }
 
-   
+        *
+        {box-sizing: border-box
+            ;margin: 10;
+        padding:10;
+        font-weight: 150;
+        font-family: Arial, Helvetica, sans-serif;}
+
+    
+
+        h2{
+           text-align: center;}
+
+           #startScreen{
+               text-align: center;
+           }
+
+           h1{text-align: end;}
+           h3{text-align: start;}
