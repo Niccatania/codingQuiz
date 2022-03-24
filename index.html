@@ -8,23 +8,26 @@
     <title>Coding quiz</title>
   </head>
   <body>
-
-    <a onclick="highScorepage()"><h1 class="HighScoreLink" style="text-align:left;">HighScores</h1></a>
-    <h1 class="timer" style="text-align:right;" > Timer:</h1>
+<div id="nav">
+    <a onclick="highScorepage()"><h3 class="HighScoreLink" >HighScores</h3></a>
+    <h1 class="timer" > Timer:60</h1>
     
+  </div>
 
+    <div id=startScreen >
+     
 
-    
-      <div id=startScreen>
-
-        <h2>"Worlds best coding quiz"</h2>
+        <h2 >"Worlds best coding quiz"</h2>
         <h3>"It's quite possible this is the best coding quiz ever. Wrong answer subtracts 10 seconds from the timer. The goal is to have as many seconds left as possible by completion."</h3>
 <button id="startBtn" onclick="startQuiz()">"Start Quiz"</button>
       </div>
       <div class="questionScreen hide">
         <h2 id="questionTitle"></h2>
         <div id="choices"></div>
+        <p id="answerMessage"></p>
+      
       </div>
+    
       
       <div class="highScoreScreen hide" >
           <h2> The quiz is over.</h2>
@@ -46,7 +49,7 @@
       <h2> This is where the highscores would go. </h2>
       <p id="superIn"></p>
        <button type="button" onClick="window.location.reload();">Replay!</button>
-      <button onclick="clearScores()")>Clear scores.</button>
+      <button onclick="clearScores()">Clear scores.</button>
 
       <div></div>
     </div>
@@ -62,5 +65,6 @@
     <script src="./script.js"></script>
   </body>
 </html>
+
 
 
