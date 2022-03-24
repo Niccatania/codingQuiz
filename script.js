@@ -1,6 +1,5 @@
 var timeEL = document.querySelector(".timer");
 var choicesEl = document.querySelector("#choices");
-var startQuestion
 var secondsLeft = 60;
 var score = ""
 var currentQuestionIndex = 0;
@@ -8,7 +7,7 @@ var submitBtn = document.querySelector("#submit");
 var showInitials=document.querySelector("#superIn")
 
 
-
+// setting our timer
 function setTime() {
   var timerInterval = setInterval(function() {
     secondsLeft--;
@@ -22,8 +21,8 @@ function setTime() {
 
   }, 1000); }
 
-
-function renderLastRegistered() {
+// displaying the initials user input
+function pullScore() {
   var myText = document.querySelector("#myText").value;
   localStorage.getItem("myText", myText);
 
@@ -89,6 +88,7 @@ function showQuestions(){
 function answerClick(){
   if (this.value !== questions[currentQuestionIndex].Answer) {
     secondsLeft -= 10;
+    // document.getElementById("#answerMessage").innerHTML="Wrong!";
   }
 
   currentQuestionIndex++;
@@ -107,6 +107,7 @@ function startQuiz() {
 
  
   document.querySelector("#startScreen").classList.add("hide");
+  
 
   document.querySelector(".questionScreen").classList.remove("hide");
 
@@ -139,7 +140,7 @@ function highScorepage(){
 
   document.querySelector(".timer").classList.add("hide");
 
-  renderLastRegistered();
+  
 
   
   
@@ -156,45 +157,33 @@ function myFunction() {
   var input = document.getElementById(".inputBtn");
 localStorage.setItem("", input.val());
 console.log(input);
-renderLastRegistered();
+pullScore();
 }
 
 
-function replay(){
-  
-    document.querySelector("#startScreen").classList.remove("hide");
-  
-    document.querySelector(".viewhighScores").classList.add("hide");
-  
-    
-    setTime();
-    showQuestions();
-     return;
+function clearScores(){
+
+  localStorage.clear();
+
+  document.querySelector("#superIn").classList.add("hide");}
 
 
-    //  reset timer
-    // reset questions
 
 
-  function clearScores(){
-
-  }
-
-}
 
 
 submitBtn.addEventListener("click", function(event) {
   // event.preventDefault();
 
   var myText = document.querySelector("#myText").value;
-
+  
   if (myText === "") {
     displayMessage("Enter something, anything.");
   } else  {
 
   localStorage.setItem("myText", myText);
-  // localStorage.setItem("password", password);
-  renderLastRegistered(); 
+  
+  pullScore(); 
 }
 });
 
