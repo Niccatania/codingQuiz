@@ -5,7 +5,7 @@ var score = ""
 var currentQuestionIndex = 0;
 var submitBtn = document.querySelector("#submit");
 var showInitials=document.querySelector("#superIn")
-
+var scoreReal = document.querySelector(".scoreTimer");
 
 // setting our timer
 function setTime() {
@@ -16,6 +16,7 @@ function setTime() {
     if(secondsLeft === 0  | currentQuestionIndex === questions.length) {
       
       clearInterval(timerInterval);
+      scoreReal.textContent = secondsLeft;
       endQuiz();
     }
 
@@ -88,7 +89,6 @@ function showQuestions(){
 function answerClick(){
   if (this.value !== questions[currentQuestionIndex].Answer) {
     secondsLeft -= 10;
-    // document.getElementById("#answerMessage").innerHTML="Wrong!";
   }
 
   currentQuestionIndex++;
@@ -107,7 +107,7 @@ function startQuiz() {
 
  
   document.querySelector("#startScreen").classList.add("hide");
-  
+
 
   document.querySelector(".questionScreen").classList.remove("hide");
 
@@ -174,7 +174,7 @@ function clearScores(){
 
 submitBtn.addEventListener("click", function(event) {
   // event.preventDefault();
-
+  var timer = document.querySelector(".timer").value;
   var myText = document.querySelector("#myText").value;
   
   if (myText === "") {
@@ -182,6 +182,7 @@ submitBtn.addEventListener("click", function(event) {
   } else  {
 
   localStorage.setItem("myText", myText);
+  localStorage.setItem("timer", timer);
   
   pullScore(); 
 }
