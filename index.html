@@ -21,6 +21,7 @@
         <h3>"It's quite possible this is the best coding quiz ever. Wrong answer subtracts 10 seconds from the timer. The goal is to have as many seconds left as possible by completion."</h3>
 <button id="startBtn" onclick="startQuiz()">"Start Quiz"</button>
       </div>
+      
       <div class="questionScreen hide">
         <h2 id="questionTitle"></h2>
         <div id="choices"></div>
@@ -31,7 +32,7 @@
       
       <div class="highScoreScreen hide" >
           <h2> The quiz is over.</h2>
-          <p>Your score is " "</p>
+          <p>Your score is <span class=scoreTimer></span> </p>
           <input type="text" id="myText" value="">
 
 <button id= "submit" class= "inputBtn" onclick="myFunction()">Submit score</button>
@@ -65,6 +66,5 @@
     <script src="./script.js"></script>
   </body>
 </html>
-
 
 
