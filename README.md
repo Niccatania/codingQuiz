@@ -7,6 +7,14 @@ The goal of this project was to create a timed coding quiz. The quiz is multiple
 # Application link
 https://niccatania.github.io/codingQuiz/
 
+
+# Screenshots
+
+![Main screen](screenshots/main.png)
+
+![Question](screenshots/quest.png)
+ 
 # Usage
+
 If you would like to add or update to this code please contact me
 
